@@ -1,0 +1,31 @@
+:root { --green: #405e57; --light: #eef2ef; --dark: #222; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--dark); background: #fff; }
+.site-header { max-width: 940px; margin: 18px auto 0; padding: 0 16px 10px; }
+.logo-wrap { display: flex; align-items: center; justify-content: center; gap: 18px; min-height: 90px; }
+.lemon-mark { font-size: 54px; transform: rotate(-20deg); }
+.logo-text { font-family: Georgia, serif; letter-spacing: 5px; font-weight: 700; font-size: 26px; color: var(--green); }
+.nav { display: flex; justify-content: center; gap: 28px; background: var(--green); padding: 10px; }
+.nav a { color: white; text-decoration: none; font-size: 16px; }
+.container { max-width: 940px; margin: 10px auto 20px; padding: 0 16px; min-height: 480px; }
+.hero { min-height: 420px; display: flex; align-items: center; padding: 50px; background: #f2e7c9; }
+h1 { font-family: Georgia, serif; font-size: 36px; margin-top: 0; }
+h2 { font-family: Georgia, serif; }
+.button { display: inline-block; border: 0; border-radius: 4px; background: var(--green); color: white; padding: 12px 26px; text-decoration: none; cursor: pointer; }
+.booking-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 30px; margin-top: 10px; }
+.card { border: 1px solid #eee; padding: 24px; background: white; }
+form { display: flex; flex-direction: column; gap: 7px; }
+label { font-weight: 700; margin-top: 8px; }
+input, select { padding: 10px; border: 1px solid #bbb; border-radius: 3px; font-size: 15px; background: white; }
+select option:disabled { color: #aaa; background: #eee; }
+form .button { margin-top: 12px; width: 100%; }
+.error { color: #a33; margin: 5px 0; }
+pre { background: #f6f7f6; padding: 18px; overflow: auto; line-height: 1.5; }
+.footer { max-width: 908px; margin: 0 auto 18px; background: var(--light); min-height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; }
+.footer-mark { border: 1px solid #789087; padding: 8px 12px; }
+@media (max-width: 700px) {
+  .booking-layout { grid-template-columns: 1fr; }
+  .nav { flex-wrap: wrap; gap: 15px; }
+  .logo-text { font-size: 20px; }
+  .hero { padding: 30px; }
+}

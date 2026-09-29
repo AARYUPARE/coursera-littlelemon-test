@@ -1,0 +1,15 @@
+Little Lemon Booking Assignment
+
+MySQL setup:
+1. Create a MySQL database named: littlelemon
+2. Set these environment variables before running Django:
+   MYSQL_DATABASE=littlelemon
+   MYSQL_USER=root
+   MYSQL_PASSWORD=YOUR_MYSQL_PASSWORD
+   MYSQL_HOST=127.0.0.1
+   MYSQL_PORT=3306
+
+No application login credentials are required for this assignment.
+
+Example MySQL command:
+CREATE DATABASE littlelemon CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

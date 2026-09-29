@@ -1,0 +1,11 @@
+{% extends 'restaurant/base.html' %}
+{% block title %}Little Lemon{% endblock %}
+{% block content %}
+<section class="hero">
+    <div>
+        <h1>Little Lemon</h1>
+        <p>Fresh Mediterranean food, made with love.</p>
+        <a class="button" href="{% url 'book' %}">Make a reservation</a>
+    </div>
+</section>
+{% endblock %}

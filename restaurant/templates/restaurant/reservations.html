@@ -1,0 +1,20 @@
+{% extends 'restaurant/base.html' %}
+{% block title %}All Reservations - Little Lemon{% endblock %}
+{% block content %}
+<section class="card">
+    <h1>All Reservations</h1>
+    <pre id="reservations-json">Loading...</pre>
+</section>
+{% endblock %}
+{% block scripts %}
+<script>
+fetch('{% url "bookings_api" %}')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('reservations-json').textContent = JSON.stringify(data, null, 2);
+    })
+    .catch(() => {
+        document.getElementById('reservations-json').textContent = 'Unable to load reservations.';
+    });
+</script>
+{% endblock %}

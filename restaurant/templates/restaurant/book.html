@@ -1,0 +1,37 @@
+{% extends 'restaurant/base.html' %}
+{% load static %}
+{% block title %}Book a Table - Little Lemon{% endblock %}
+{% block content %}
+<div class="booking-layout">
+    <section class="card">
+        <h1>Make a reservation</h1>
+        <form method="post" id="booking-form">
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                <div class="error">{{ form.non_field_errors }}</div>
+            {% endif %}
+            <label for="id_first_name">Name:</label>
+            {{ form.first_name }}
+            {% for error in form.first_name.errors %}<small class="error">{{ error }}</small>{% endfor %}
+
+            <label for="id_reservation_date">Reservation date:</label>
+            {{ form.reservation_date }}
+            {% for error in form.reservation_date.errors %}<small class="error">{{ error }}</small>{% endfor %}
+
+            <label for="id_reservation_slot">Reservation time:</label>
+            {{ form.reservation_slot }}
+            {% for error in form.reservation_slot.errors %}<small class="error">{{ error }}</small>{% endfor %}
+
+            <button class="button" type="submit">Reserve</button>
+        </form>
+    </section>
+
+    <section class="card reservations-card">
+        <h2>Bookings For <span id="selected-date">{{ today }}</span></h2>
+        <div id="booking-list"><p>Loading...</p></div>
+    </section>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'restaurant/js/booking.js' %}"></script>
+{% endblock %}
